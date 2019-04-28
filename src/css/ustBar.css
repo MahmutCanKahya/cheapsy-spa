@@ -1,0 +1,23 @@
+#sat{
+    background: red;
+    color: white;
+
+}
+
+#sat:hover{
+    background: darkgrey;
+    color: white;
+}
+
+#giriskayit{
+    color: white;
+}
+
+#giriskayit:hover{
+    color: red;
+}
+
+#logo{
+    font-family: 'Gugi', cursive;
+    font-size: xx-large;
+}
