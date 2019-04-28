@@ -3,17 +3,18 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { showAdverts } from "../actions/index";
 
+const {state} = {
+    advert:[],
+    _id:"",
+    ilan_adi: "",
+    fiyat: "",
+    ilan_url: "",
+    ilan_tarihi: ""
+}
+
 class Adverts extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-        advert:[],
-        _id:"",
-        ilan_adi: "",
-        fiyat: "",
-        ilan_url: "",
-        ilan_tarihi: ""
-    };
   }
 
   componentDidMount = async () => {
@@ -37,7 +38,7 @@ class Adverts extends Component {
                     <a href="#">
                     <img
                         className="card-img-top"
-                        src="{{this.ilan_url}}"
+                        src={advert.data.ilan_url}
                         alt=""
                     />
                     </a>
