@@ -17,7 +17,9 @@ class App extends Component {
               <LeftBar />
 
               <div className="col-lg-9">
+                <div className="row">
                 <Adverts/>
+                </div>
               </div>
 
               
