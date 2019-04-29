@@ -21,3 +21,7 @@
     font-family: 'Gugi', cursive;
     font-size: xx-large;
 }
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
