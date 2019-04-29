@@ -37,7 +37,7 @@ class Adverts extends Component {
                           </div>
                           <div className="card-footer d-flex justify-content-between align-items-center">
                               <small className="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>
-                              <small className="text-muted">{value.ilan_tarihi}</small>
+                              {/*<small className="text-muted">{value.ilan_tarihi}</small>*/}
                           </div>
                       </div>
                   </div>
