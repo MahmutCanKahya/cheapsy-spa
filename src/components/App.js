@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NavBar from "./NavBar";
 import LeftBar from "./LeftBar";
 import Register from "./Register";
+import Advert from "./Advert"
 import Adverts from "./Adverts";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "../css/App.css";
@@ -20,6 +21,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={Adverts}/>
                 <Route exact path="/add" component={Register}/>
+                <Route exact path="/adverts/:advertId" component={Advert}/>
                 <Route component={Adverts}/>
               </Switch>
                 
