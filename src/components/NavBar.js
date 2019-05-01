@@ -4,12 +4,13 @@ import "../css/ustBar.css";
 class NavBar extends Component {
   render() {
     return (
-      <div id="nav">
+      <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
           <div className="container">
-            <a className="navbar-brand code" id="logo" href="/">
+            <a className="navbar-brand navcode" id="logo" href="/">
               CHEAPSY
             </a>
+            <input class="form-control form-control-dark  w-50" type="text" placeholder="Search" aria-label="Search"></input>
             <button
               className="navbar-toggler"
               type="button"
@@ -21,16 +22,16 @@ class NavBar extends Component {
             >
               <span className="navbar-toggler-icon" />
             </button>
-
+            
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <a className="nav-link" href="" id="giriskayit">
+                  <a className="nav-link" href="/" id="giriskayit">
                     GİRİŞ
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" id="giriskayit" href="">
+                  <a className="nav-link" id="giriskayit" href="/add">
                     KAYIT OL
                   </a>
                 </li>
@@ -38,8 +39,8 @@ class NavBar extends Component {
                                 <li className="nav-item">
                                     <a className="nav-link" href="#">ÇIKIŞ</a>
                                 </li>*/}
-                <li className="nav-item bg-warning">
-                  <a className="nav-link" id="sat" href="">
+                <li className="nav-item ">
+                  <a className="nav-link ml-lg-4" id="sat" href="/">
                     HEMEN SAT
                   </a>
                 </li>

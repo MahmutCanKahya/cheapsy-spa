@@ -5,20 +5,21 @@ export default function ProductListItem(props) {
   return (
     
         <div className="card h-100">
-          <a href="#">
+          <a href="/">
             <img
-              className="card-img-top"
+              className="card-img-top "
               src={
                 "http://sallagitsinakitgelsin.tk:5000/" + props.advert.ilan_url
               }
               alt="Resim Mevcut Değil"
               width="auto" 
               height="181.7"
+              placeholder={props.advert.ilan_adi}
             />
           </a>
           <div className="card-body">
             <h4 className="card-title">
-              <a href="#">{props.advert.ilan_adi}</a>
+              <a href="/">{props.advert.ilan_adi}</a>
             </h4>
             <h5>{props.advert.fiyat +" ₺"}</h5>
           </div>

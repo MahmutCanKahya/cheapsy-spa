@@ -1,4 +1,4 @@
-import { ADD_USER ,SHOW_ADVERTS} from '../constants'
+import { ADD_USER} from '../constants'
 
 const user = (action)=>{
     return{
@@ -21,7 +21,7 @@ const users = (state = [],action)=>{
             return state;
     }
 }
-
+/*
 const advert =(action)=>{
     return{
         _id:action._id,
@@ -43,6 +43,6 @@ const adverts = (state = [] , action)=>{
         default:
             return state;
     }
-}
+}*/
 
 export default users;
