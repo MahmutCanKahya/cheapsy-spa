@@ -5,7 +5,7 @@ export default function ProductListItem(props) {
   return (
     
         <div className="card h-100">
-          <a href="/">
+          <a href={"/adverts/advertid="+props.advert._id}>
             <img
               className="card-img-top "
               src={

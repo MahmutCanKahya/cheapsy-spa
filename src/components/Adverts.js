@@ -6,7 +6,7 @@ class Adverts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      advert: []
+      adverts: []
     };
   }
 
@@ -15,7 +15,7 @@ class Adverts extends Component {
       "http://sallagitsinakitgelsin.tk:5000/api/adverts"
     );
     this.setState({
-      advert: response.data
+      adverts: response.data
     });
     console.log("CDM =>", response);
   };
@@ -23,8 +23,8 @@ class Adverts extends Component {
   render() {
     return (
       <div>
-        {console.log(this.state.advert)}
-        <AdvertListing adverts={this.state.advert} />
+        {console.log(this.state.adverts)}
+        <AdvertListing adverts={this.state.adverts} />
       </div>
     );
   }
