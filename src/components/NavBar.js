@@ -1,7 +1,25 @@
 import React, { Component } from "react";
 import "../css/ustBar.css";
+import Popup from "./LoginRegister"
+
 
 class NavBar extends Component {
+  constructor(){
+    super();
+    this.state = {
+      showPopup: false
+    };
+  }
+
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
+
+
+
+
   render() {
     return (
       <div>
@@ -26,9 +44,9 @@ class NavBar extends Component {
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <a className="nav-link" href="/" id="giriskayit">
-                    GİRİŞ
-                  </a>
+
+                  <a className="nav-link" id="giriskayit" onClick={this.togglePopup.bind(this)}>GİRİŞ</a>
+
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" id="giriskayit" href="/add">
@@ -48,6 +66,10 @@ class NavBar extends Component {
             </div>
           </div>
         </nav>
+        {this.state.showPopup ?
+            <Popup closePopup={this.togglePopup.bind(this)}/>
+            : null
+        }
       </div>
     );
   }
