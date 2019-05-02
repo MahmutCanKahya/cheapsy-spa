@@ -6,12 +6,15 @@ import Advert from "./Advert"
 import Adverts from "./Adverts";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "../css/App.css";
+import Login from "./Login";
+
 class App extends Component {
   render() {
     return (
       <Router>
         <Switch>
           <Route exact path="/add" component={Register}/>
+          <Route exact path="/login" component={Login}/>
 
         <div>
           <NavBar />

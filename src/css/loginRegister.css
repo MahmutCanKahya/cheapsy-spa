@@ -3,6 +3,14 @@ body{
     background-color: #f5f5f5;
 }
 
+a{
+    color : black;
+}
+
+a:hover{
+    color: rgb(203 68 74);
+}
+
 h1{
     font-family: 'Gugi', cursive;
 }

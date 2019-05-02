@@ -10,7 +10,7 @@ class NavBar extends Component {
             <a className="navbar-brand navcode" id="logo" href="/">
               CHEAPSY
             </a>
-            <input class="form-control form-control-dark  w-50" type="text" placeholder="Search" aria-label="Search"></input>
+            <input class="form-control form-control-dark  w-50" type="text" placeholder="Aramaya başla" aria-label="Search"></input>
             <button
               className="navbar-toggler"
               type="button"
@@ -26,7 +26,7 @@ class NavBar extends Component {
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <a className="nav-link" href="/" id="giriskayit">
+                  <a className="nav-link" href="/login" id="giriskayit">
                     GİRİŞ
                   </a>
                 </li>

@@ -1,12 +1,14 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 #sat{
-    font-family: 'Gugi', cursive;
     background: rgb(203 68 74);
     color: white;
 
 }
 
 #sat:hover{
-    font-family: 'Gugi', cursive;
 
     background: darkgrey;
     color: white;
