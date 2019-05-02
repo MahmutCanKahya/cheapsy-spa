@@ -1,7 +1,8 @@
 import React from "react";
-import moment from 'moment';
+import moment from 'moment/min/moment-with-locales';
 
 export default function ProductListItem(props) {
+    moment.locale('tr');
   return (
     
         <div className="card h-100">
@@ -24,9 +25,6 @@ export default function ProductListItem(props) {
             <h5>{props.advert.fiyat +" ₺"}</h5>
           </div>
           <div className="card-footer d-flex justify-content-between align-items-center">
-            <small className="text-muted">
-              &#9733; &#9733; &#9733; &#9734; &#9734;
-            </small>
             <small className="text-muted">{moment(new Date(props.advert.ilan_tarihi)).fromNow()}</small>
           </div>
         </div>
