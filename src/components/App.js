@@ -5,6 +5,7 @@ import Register from "./Register";
 import Adverts from "./Adverts";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "../css/App.css";
+import Advert from "./Advert";
 class App extends Component {
   render() {
     return (
@@ -20,6 +21,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={Adverts}/>
                 <Route exact path="/add" component={Register}/>
+                <Route exact path="/adverts/:advertId" component={Advert}/>
                 <Route component={Adverts}/>
               </Switch>
                 
