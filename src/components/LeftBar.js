@@ -6,12 +6,12 @@ class LeftBar extends Component {
             <div className="col-lg-3">
 
                 <div className="list-group mb-4">
-                    <a href="/kategori/emlak" className="list-group-item text-danger bg-light">EMLAK</a>
-                    <a href="/kategori/vasita" className="list-group-item text-danger bg-light">VASITA</a>
-                    <a href="/kategori/elektronik" className="list-group-item text-danger bg-light">ELEKTRONİK</a>
-                    <a href="/kategori/giyim" className="list-group-item text-danger bg-light">GİYİM</a>
-                    <a href="/kategori/kozmetik" className="list-group-item text-danger bg-light">KOZMETİK</a>
-                    <a href="/kategori/aksesuar" className="list-group-item text-danger bg-light">AKSESUAR</a>
+                    <a href="/kategori/emlak" className="list-group-item text-white bg-dark">EMLAK</a>
+                    <a href="/kategori/vasita" className="list-group-item text-white bg-dark">VASITA</a>
+                    <a href="/kategori/elektronik" className="list-group-item text-white bg-dark">ELEKTRONİK</a>
+                    <a href="/kategori/giyim" className="list-group-item text-white bg-dark">GİYİM</a>
+                    <a href="/kategori/kozmetik" className="list-group-item text-white bg-dark">KOZMETİK</a>
+                    <a href="/kategori/aksesuar" className="list-group-item text-white bg-dark">AKSESUAR</a>
 
                 </div>
 

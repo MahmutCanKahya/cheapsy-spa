@@ -10,17 +10,19 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <Switch>
+          <Route exact path="/add" component={Register}/>
+
         <div>
           <NavBar />
 
-          <div className="container  navtopmargin">
+          <div className="container navtopmargin">
             <div className="row">
               <LeftBar />
 
               <div className="col-lg-9">
               <Switch>
                 <Route exact path="/" component={Adverts}/>
-                <Route exact path="/add" component={Register}/>
                 <Route exact path="/adverts/:advertId" component={Advert}/>
                 <Route component={Adverts}/>
               </Switch>
@@ -41,6 +43,8 @@ class App extends Component {
           <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" />
           
         </div>
+        </Switch>
+
       </Router>
     );
   }

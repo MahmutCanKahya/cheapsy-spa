@@ -1,10 +1,13 @@
 #sat{
-    background: red;
+    font-family: 'Gugi', cursive;
+    background: rgb(203 68 74);
     color: white;
 
 }
 
 #sat:hover{
+    font-family: 'Gugi', cursive;
+
     background: darkgrey;
     color: white;
 }

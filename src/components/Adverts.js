@@ -22,7 +22,7 @@ class Adverts extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Adverts">
         {console.log(this.state.advert)}
         <AdvertListing adverts={this.state.advert} />
       </div>
