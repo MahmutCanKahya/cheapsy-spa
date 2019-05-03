@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../css/loginRegister.css'
+import Axios from 'axios';
 
 
 
@@ -8,7 +9,8 @@ class Login extends Component {
         super()
         this.state = {
             password : '',
-            email : ''
+            email : '',
+            token:''
         }
         this.login = this.login.bind(this);
 
@@ -23,42 +25,16 @@ class Login extends Component {
         this.setState({email : text.target.value})
     }
 
-    handleResponse(response) {
-    return response.text().then(text => {
-        const data = text && JSON.parse(text);
-        if (!response.ok) {
-            if (response.status === 401) {
-                // auto logout if 401 response returned from api
-         }
 
-            const error = (data && data.message) || response.statusText;
-            return Promise.reject(error);
-        }
-        return data;
-    })}
-
-    login(event){
-        event.preventDefault();
-        console.log(JSON.stringify(this.state))
-        fetch('sallagitsin.tk/api/user/login', {
-            method: 'POST',
-            body: JSON.stringify(this.state),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                console.log(res)
-                if (res.status === 200) {
-                    this.props.history.push('/');
-                } else {
-                    console.log(res.error)
-                }
-            })
-            .catch(err => {
-                console.error(err);
-                    alert('Kullanıcı adı veya şifre yanlış');
-            });
+    login(){
+       Axios.post('http://sallagitsinakitgelsin.tk:5000/api/user/login',{
+           sifre:this.state.password,
+           email:this.state.email
+       }).then((res)=>{
+            this.state.token=res
+            
+       console.log(res);
+       })
     }
 
 
