@@ -1,15 +1,21 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 import LeftBar from "./LeftBar";
-import Register from "./Register";
+import Register from "./LoginRegister";
 import Adverts from "./Adverts";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "../css/App.css";
 import Advert from "./Advert";
+import Category from "./Category"
+import NotFound from './NotFound';
+
 class App extends Component {
   render() {
     return (
       <Router>
+        <Switch>
+          <Route exact path="/add" component={Register}/>
+          <Route component={NotFound}/>
         <div>
           <NavBar />
 
@@ -20,11 +26,10 @@ class App extends Component {
               <div className="col-lg-9">
               <Switch>
                 <Route exact path="/" component={Adverts}/>
-                <Route exact path="/add" component={Register}/>
+                <Route exact path="/:kategori" component={Category}/>
                 <Route exact path="/adverts/:advertId" component={Advert}/>
-                <Route component={Adverts}/>
               </Switch>
-                
+
               </div>
             </div>
           </div>
@@ -39,8 +44,9 @@ class App extends Component {
 
           <script src="vendor/jquery/jquery.min.js" />
           <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" />
-          
+
         </div>
+        </Switch>
       </Router>
     );
   }
