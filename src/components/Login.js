@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../css/loginRegister.css'
 import Axios from 'axios';
+import alertify from 'alertifyjs';
 
 
 class Login extends Component {
@@ -31,6 +32,7 @@ class Login extends Component {
        }).then((res)=>{
             if(res.status===200){
                 sessionStorage.setItem('user',res.data.token);
+                alertify.success('Giriş Yapıldı'); 
                 this.props.history.push('/')
             }else{
                 const error = new Error(res.error);
@@ -38,7 +40,7 @@ class Login extends Component {
             }
        })
        .catch(err => {
-           alert('Lütfen bilgilerinizi kontrol ediniz.');
+            alertify.error('Giriş işlemi yapılmadı.'); 
        })
     }
 

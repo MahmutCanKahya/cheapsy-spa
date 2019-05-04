@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../css/ustBar.css";
 import Axios from "axios";
+import alertify from 'alertifyjs';
 
 class NavBar extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class NavBar extends Component {
   }
   logOut() {
     sessionStorage.removeItem("user");
+    alertify.message('Çıkış yapıldı'); 
     this.setState({ isAuth: false });
   }
   componentDidMount() {
