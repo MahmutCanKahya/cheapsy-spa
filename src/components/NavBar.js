@@ -14,7 +14,7 @@ class NavBar extends Component {
 
   isAuthenticated() {
     var token = sessionStorage.getItem("user");
-    Axios.post("http://localhost:5000/api/user/posts", {
+    Axios.post("http://sallagitsinakitgelsin.tk:5000/api/user/posts", {
       authorization: "Bearer " + token
     }).then(res => {
       console.log(res);
@@ -30,8 +30,8 @@ class NavBar extends Component {
   }
   logOut() {
     sessionStorage.removeItem("user");
-    alertify.message('Çıkış yapıldı'); 
     this.setState({ isAuth: false });
+    alertify.error('Çıkış yapıldı'); 
   }
   componentDidMount() {
     this.isAuthenticated();
