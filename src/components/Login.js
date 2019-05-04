@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../css/loginRegister.css'
 import Axios from 'axios';
-
+import { Redirect } from 'react-router-dom';
 
 
 class Login extends Component {
@@ -9,8 +9,7 @@ class Login extends Component {
         super()
         this.state = {
             password : '',
-            email : '',
-            token:''
+            email : ''
         }
         this.login = this.login.bind(this);
 
@@ -29,11 +28,20 @@ class Login extends Component {
     login(){
        Axios.post('http://sallagitsinakitgelsin.tk:5000/api/user/login',{
            sifre:this.state.password,
-           email:this.state.email
+           kullaniciAdi:this.state.email
        }).then((res)=>{
-            this.state.token=res
-            
-       console.log(res);
+            if(res.status===200){
+                sessionStorage.setItem('user',res.data.token);
+                this.props.history.push('/')
+            }else{
+                const error = new Error(res.error);
+                throw error;
+            }
+            var token= sessionStorage.getItem('user');
+            console.log(token);
+       })
+       .catch(err => {
+           alert('Lütfen bilgilerinizi kontrol ediniz.');
        })
     }
 
