@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import "../css/loginRegister.css";
 
 class Register extends Component {
-  
-
-
   handlePassword(text)
   {
     this.setState({password : text.target.value})
@@ -21,9 +18,9 @@ class Register extends Component {
   {
     this.setState({surname : text.target.value})
   }
-
-
-
+  
+  
+  
   render() {
     return (
       <div className="registerDiv">
