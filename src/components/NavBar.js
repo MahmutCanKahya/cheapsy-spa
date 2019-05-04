@@ -17,9 +17,7 @@ class NavBar extends Component {
     Axios.post("http://sallagitsinakitgelsin.tk:5000/api/user/posts", {
       authorization: "Bearer " + token
     }).then(res => {
-      console.log(res);
       if (res.status === 200) {
-        console.log("asdasd:  ", res);
         this.setState({ isAuth: true });
       } else {
         this.setState({ isAuth: false });
@@ -33,10 +31,10 @@ class NavBar extends Component {
     this.setState({ isAuth: false });
     alertify.error('Çıkış yapıldı'); 
   }
-  componentDidMount() {
-    this.isAuthenticated();
-  }
   render() {
+    if(!this.state.isAuth){
+      this.isAuthenticated();
+    }
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -45,7 +43,7 @@ class NavBar extends Component {
               CHEAPSY
             </a>
             <input
-              class="form-control form-control-dark  w-50"
+              className="form-control form-control-dark  w-50"
               type="text"
               placeholder="Aramaya başla"
               aria-label="Search"
