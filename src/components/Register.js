@@ -15,11 +15,16 @@ class Register extends Component {
     }
 
     addUser(){
+        console.log(this.state.name)
+        console.log(this.state.lastname)
+        console.log(this.state.email)
+        console.log(this.state.password)
+
         axios.post('http://sallagitsinakitgelsin.tk:5000/api/user/signup',{
             ad:this.state.name,
             soyad:this.state.lastname,
             email:this.state.email,
-            sifre:this.state.password,
+            sifre:this.state.password
         }).then((res)=>{
                 console.log(res)
             })
@@ -60,55 +65,53 @@ class Register extends Component {
 
           <div className="form-label-group">
             <input
+                onChange={(text) => {this.handleEmail(text)}}
               type="email"
               id="inputEmail"
               className="form-control"
               placeholder="Email adresi girmen gerekiyor"
               autoFocus
             />
-            <label htmlFor="inputEmail" onChange={(text) => {this.handleEmail(text)}}>Email Adresi</label>
+            <label htmlFor="inputEmail" >Email Adresi</label>
           </div>
 
           <div className="form-label-group">
             <input
+                onChange={(text) => {this.handlePassword(text)}}
               type="password"
               id="inputPassword"
               className="form-control"
               placeholder="Şifre girmen gerekiyor."
             />
-            <label htmlFor="inputPassword" onChange={(text) => {this.handlePassword(text)}}>Şifre</label>
+            <label htmlFor="inputPassword" >Şifre</label>
           </div>
 
           <div className="form-label-group">
             <input
+                onChange={(text) => {this.handleName(text)}}
               type="text"
               id="inputName"
               className="form-control"
               placeholder="İsim girmen gerekiyor."
             />
-            <label htmlFor="inputEmail" onChange={(text) => {this.handleName(text)}}>İsim</label>
+            <label htmlFor="inputEmail" >İsim</label>
           </div>
 
           <div className="form-label-group">
             <input
+                onChange={(text) => {this.handleSurname(text)}}
               type="text"
               id="inputName"
               className="form-control"
               placeholder="İsim girmen gerekiyor."
             />
-            <label htmlFor="inputEmail" onChange={(text) => {this.handleSurname(text)}}>Soyisim</label>
+            <label htmlFor="inputEmail" >Soyisim</label>
           </div>
 
           <div className="checkbox mb-3">
             <label />
           </div>
-          <button
-            className="btn btn-lg btn-block bg-danger border-white"
-            type="button"
-            onClick={this.addUser}
-          >
-            Giriş
-          </button>
+          <button className="btn btn-lg btn-block bg-danger border-white" type="button" onClick={this.addUser}>Giriş</button>
           <p className="mt-5 mb-3 text-muted text-center">
             &copy; 2019 ARCOM &reg; Tüm hakları kendine aittir.
           </p>
