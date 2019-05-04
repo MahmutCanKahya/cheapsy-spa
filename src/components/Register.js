@@ -2,6 +2,28 @@ import React, { Component } from "react";
 import "../css/loginRegister.css";
 
 class Register extends Component {
+  
+
+
+  handlePassword(text)
+  {
+    this.setState({password : text.target.value})
+  }
+  handleEmail(text)
+  {
+    this.setState({email : text.target.value})
+  }
+  handleName(text)
+  {
+    this.setState({name : text.target.value})
+  }
+  handleSurname(text)
+  {
+    this.setState({surname : text.target.value})
+  }
+
+
+
   render() {
     return (
       <div className="registerDiv">
