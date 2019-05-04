@@ -1,7 +1,30 @@
 import React, { Component } from "react";
 import "../css/loginRegister.css";
+import axios from "axios";
 
 class Register extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            name: '',
+            lastname: '',
+            email: '',
+            password: '',
+        }
+        this.addUser = this.addUser.bind(this)
+    }
+
+    addUser(){
+        axios.post('http://sallagitsinakitgelsin.tk:5000/api/user/signup',{
+            ad:this.state.name,
+            soyad:this.state.lastname,
+            email:this.state.email,
+            sifre:this.state.password,
+        }).then((res)=>{
+                console.log(res)
+            })
+    }
+
   handlePassword(text)
   {
     this.setState({password : text.target.value})
@@ -16,9 +39,10 @@ class Register extends Component {
   }
   handleSurname(text)
   {
-    this.setState({surname : text.target.value})
+    this.setState({lastname : text.target.value})
   }
-  
+
+
   
   
   render() {
@@ -42,7 +66,7 @@ class Register extends Component {
               placeholder="Email adresi girmen gerekiyor"
               autoFocus
             />
-            <label htmlFor="inputEmail">Email Adresi</label>
+            <label htmlFor="inputEmail" onChange={(text) => {this.handleEmail(text)}}>Email Adresi</label>
           </div>
 
           <div className="form-label-group">
@@ -52,27 +76,27 @@ class Register extends Component {
               className="form-control"
               placeholder="Şifre girmen gerekiyor."
             />
-            <label htmlFor="inputPassword">Şifre</label>
+            <label htmlFor="inputPassword" onChange={(text) => {this.handlePassword(text)}}>Şifre</label>
           </div>
 
           <div className="form-label-group">
             <input
-              type="password"
-              id="inputPassword"
+              type="text"
+              id="inputName"
               className="form-control"
-              placeholder="Şifre girmen gerekiyor."
+              placeholder="İsim girmen gerekiyor."
             />
-            <label htmlFor="inputPassword">İsim</label>
+            <label htmlFor="inputEmail" onChange={(text) => {this.handleName(text)}}>İsim</label>
           </div>
 
           <div className="form-label-group">
             <input
-              type="password"
-              id="inputPassword"
+              type="text"
+              id="inputName"
               className="form-control"
-              placeholder="Şifre girmen gerekiyor."
+              placeholder="İsim girmen gerekiyor."
             />
-            <label htmlFor="inputPassword">Soyisim</label>
+            <label htmlFor="inputEmail" onChange={(text) => {this.handleSurname(text)}}>Soyisim</label>
           </div>
 
           <div className="checkbox mb-3">
@@ -80,7 +104,8 @@ class Register extends Component {
           </div>
           <button
             className="btn btn-lg btn-block bg-danger border-white"
-            type="submit"
+            type="button"
+            onClick={this.addUser}
           >
             Giriş
           </button>
