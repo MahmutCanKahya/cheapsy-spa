@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import '../css/loginRegister.css'
 import Axios from 'axios';
-import { Redirect } from 'react-router-dom';
 
 
 class Login extends Component {
@@ -28,7 +27,7 @@ class Login extends Component {
     login(){
        Axios.post('http://sallagitsinakitgelsin.tk:5000/api/user/login',{
            sifre:this.state.password,
-           kullaniciAdi:this.state.email
+           email:this.state.email
        }).then((res)=>{
             if(res.status===200){
                 sessionStorage.setItem('user',res.data.token);
@@ -37,8 +36,6 @@ class Login extends Component {
                 const error = new Error(res.error);
                 throw error;
             }
-            var token= sessionStorage.getItem('user');
-            console.log(token);
        })
        .catch(err => {
            alert('Lütfen bilgilerinizi kontrol ediniz.');
