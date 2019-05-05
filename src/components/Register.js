@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "../css/loginRegister.css";
 import axios from "axios";
+import alertify from "alertifyjs";
+import Axios from "./Login";
 
 class Register extends Component {
     constructor(props){
@@ -10,25 +12,32 @@ class Register extends Component {
             lastname: '',
             email: '',
             password: '',
-        }
-        this.addUser = this.addUser.bind(this)
+        };
+        this.addUser = this.addUser.bind(this);
     }
 
     addUser(){
-        console.log(this.state.name)
-        console.log(this.state.lastname)
-        console.log(this.state.email)
-        console.log(this.state.password)
-
         axios.post('http://sallagitsinakitgelsin.tk:5000/api/user/signup',{
             ad:this.state.name,
             soyad:this.state.lastname,
             email:this.state.email,
             sifre:this.state.password
         }).then((res)=>{
-                console.log(res)
-            })
+            if(res.status === 201){
+                alertify.success('Kayıt başarılı lütfen giriş yapın.')
+                this.props.history.push('/login')
+            }else{
+                console.log("hata olustu")
+                const error = new Error(res.error);
+                throw error;
+            }
+        })
+            .catch(err => {
+                    alertify.error('Kayıt işlemi yapılmadı.');
+                }
+            )
     }
+
 
   handlePassword(text)
   {
