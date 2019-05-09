@@ -32,11 +32,6 @@ constructor(props) {
                                 <script className="jsbin"
                                         src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
                                 <div className="file-upload col-md-12">
-                                    <button className="file-upload-btn" type="file">Resim Yükle</button>
-                                    <input type="button" onClick="document.getElementById('myFileInput').click()"
-                                           value="Select a File"/>
-
-
                                     <div className="image-upload-wrap">
                                         <DropToUpload className="file-upload-input" type='file' onDrop={ this.handleDrop } accept="image/*"/>
                                         <div className="drag-text">
