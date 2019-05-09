@@ -31,10 +31,14 @@ class NavBar extends Component {
     this.setState({ isAuth: false });
     alertify.error('Çıkış yapıldı'); 
   }
-  render() {
+
+  componentWillMount() {
     if(!this.state.isAuth){
       this.isAuthenticated();
     }
+  }
+
+  render() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -84,6 +88,13 @@ class NavBar extends Component {
                   </li>
                 ) : null}
                 {this.state.isAuth ? (
+                    <li className="nav-item ">
+                      <a className="nav-link" id="profil" href="/user/profile">
+                        PROFİL
+                      </a>
+                    </li>
+                ) : null}
+                {this.state.isAuth ? (
                   <li className="nav-item ">
                     <a className="nav-link ml-lg-4" id="sat" href="/hemenSat">
                       HEMEN SAT
@@ -97,6 +108,9 @@ class NavBar extends Component {
                     </a>
                   </li>
                 ) : null}
+
+
+
               </ul>
             </div>
           </div>

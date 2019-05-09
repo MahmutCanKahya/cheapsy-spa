@@ -7,6 +7,8 @@ import Adverts from "./Adverts";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "../css/App.css";
 import Login from "./Login";
+import Sell from "./Sell";
+import Profile from "./Profile";
 
 class App extends Component {
   render() {
@@ -15,10 +17,11 @@ class App extends Component {
         <Switch>
           <Route exact path="/add" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/user/profile" component={Profile}/>
+          <Route exact path="/sell" component={Sell}/>
 
           <div>
             <NavBar />
-
             <div className="container navtopmargin">
               <div className="row">
                 <LeftBar />
