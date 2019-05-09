@@ -15,10 +15,6 @@ class Login extends Component {
 
     }
 
-    componentDidMount() {
-        console.log(this.props.state)
-    }
-
     handlePassword(text)
     {
         this.setState({password : text.target.value})

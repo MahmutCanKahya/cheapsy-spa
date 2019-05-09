@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7db7d8e9-60f7-4b89-82ac-190ed06b3f32" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/components/Sell.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sell.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register.js" afterDir="false" />
+>>>>>>> parent of 06c1ae2... register
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -16,11 +21,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Register.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> parent of 06c1ae2... register
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Profile.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="15">
               <caret line="3" selection-start-line="3" selection-end-line="3" />
+=======
+            <state relative-caret-position="395">
+              <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+>>>>>>> parent of 06c1ae2... register
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -238,15 +263,23 @@
       <workItem from="1556829452223" duration="2275000" />
       <workItem from="1556895065280" duration="2301000" />
       <workItem from="1557004321471" duration="539000" />
+<<<<<<< HEAD
       <workItem from="1557057314371" duration="2427000" />
       <workItem from="1557414563123" duration="194000" />
       <workItem from="1557414792713" duration="3138000" />
       <workItem from="1557433687108" duration="5128000" />
+=======
+      <workItem from="1557057314371" duration="1607000" />
+>>>>>>> parent of 06c1ae2... register
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="23974000" />
+=======
+    <option name="totallyTimeSpent" value="14694000" />
+>>>>>>> parent of 06c1ae2... register
   </component>
   <component name="ToolWindowManager">
     <frame x="-41" y="23" width="1680" height="939" extended-state="0" />
@@ -257,9 +290,15 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Find" order="1" weight="0.3293979" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3293979" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39905548" />
+=======
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3293979" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+>>>>>>> parent of 06c1ae2... register
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -309,6 +348,13 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -419,6 +465,7 @@
     <entry file="file://$PROJECT_DIR$/src/actions/sell.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
@@ -454,6 +501,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/components/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+>>>>>>> parent of 06c1ae2... register
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -462,8 +515,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/NavBar.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="300">
           <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+=======
+        <state relative-caret-position="202">
+          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+>>>>>>> parent of 06c1ae2... register
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

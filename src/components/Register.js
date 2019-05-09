@@ -26,8 +26,6 @@ class Register extends Component {
             if(res.status === 201){
                 alertify.success('Kayıt başarılı lütfen giriş yapın.')
                 this.props.history.push('/login')
-
-
             }else{
                 console.log("hata olustu")
                 const error = new Error(res.error);
