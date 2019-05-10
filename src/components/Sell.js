@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import DropToUpload from 'react-drop-to-upload';
-
+import '../css/sell.css';
 
 
 class Sell extends Component {
@@ -22,7 +22,7 @@ constructor(props) {
     render() {
         return (
             <div>
-                    <div className="container">
+                    <div className="containere">
                         <div className="sign-up-content">
 
 

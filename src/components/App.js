@@ -18,11 +18,12 @@ class App extends Component {
           <Route exact path="/add" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/user/profile" component={Profile}/>
-          <Route exact path="/sell" component={Sell}/>
 
           <div>
             <NavBar />
-            <div className="container navtopmargin">
+            <Switch>
+              <Route exact path="/sell" component={Sell}/>
+              <div className="container navtopmargin">
               <div className="row">
                 <LeftBar />
 
@@ -46,6 +47,7 @@ class App extends Component {
 
             <script src="vendor/jquery/jquery.min.js" />
             <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" />
+          </Switch>
           </div>
         </Switch>
       </Router>

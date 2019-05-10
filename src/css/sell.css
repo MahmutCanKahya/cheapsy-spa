@@ -43,21 +43,14 @@ h2 {
 .clear {
     clear: both; }
 
-body {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #222;
-    background: #e7f0fd;
-    font-weight: 600;
-    font-family: Poppins;
-    margin: 0px; }
+
 
 .main {
     padding: 150px 0;
     position: relative; }
 
 
-.container {
+.containere {
     width: 520px;
     background: #fff;
     margin: 0 auto;
@@ -131,7 +124,7 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset; }
 
 @media screen and (max-width: 768px) {
-    .container {
+    .containere {
         width: calc( 100% - 30px);
         max-width: 100%; } }
 @media screen and (max-width: 575px) {
