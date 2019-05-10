@@ -26,8 +26,24 @@ class Register extends Component {
             email:this.state.email,
             sifre:this.state.password
         }).then((res)=>{
+<<<<<<< HEAD
                 console.log(res)
             })
+=======
+            if(res.status === 201){
+                alertify.success('Kayıt başarılı lütfen giriş yapın.')
+                this.props.history.push('/login')
+            }else{
+                console.log("hata olustu")
+                const error = new Error(res.error);
+                throw error;
+            }
+        })
+            .catch(err => {
+                    alertify.error('Kayıt işlemi yapılmadı.');
+                }
+            )
+>>>>>>> parent of 06c1ae2... register
     }
 
   handlePassword(text)

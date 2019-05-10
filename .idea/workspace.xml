@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/components/Sell.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sell.js" afterDir="false" />
 =======
 =======
@@ -12,6 +13,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 =======
 >>>>>>> parent of 1f4b504... Register
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> parent of 06c1ae2... register
       <change beforePath="$PROJECT_DIR$/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register.js" afterDir="false" />
 >>>>>>> parent of 06c1ae2... register
     </list>
@@ -32,8 +36,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Register.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="608">
               <caret line="86" column="16" lean-forward="true" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+=======
+            <state relative-caret-position="202">
+              <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+>>>>>>> parent of 06c1ae2... register
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -45,6 +54,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Profile.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -62,6 +72,10 @@
             <state relative-caret-position="386">
               <caret line="66" column="142" selection-start-line="66" selection-end-line="67" />
 >>>>>>> parent of 1f4b504... Register
+=======
+            <state relative-caret-position="395">
+              <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+>>>>>>> parent of 06c1ae2... register
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -322,6 +336,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1557057314371" duration="2427000" />
       <workItem from="1557414563123" duration="194000" />
       <workItem from="1557414792713" duration="3138000" />
@@ -334,10 +349,14 @@
 >>>>>>> parent of 06c1ae2... register
 =======
 >>>>>>> parent of 1f4b504... Register
+=======
+      <workItem from="1557057314371" duration="1607000" />
+>>>>>>> parent of 06c1ae2... register
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -351,6 +370,9 @@
 =======
     <option name="totallyTimeSpent" value="12998000" />
 >>>>>>> parent of 1f4b504... Register
+=======
+    <option name="totallyTimeSpent" value="14694000" />
+>>>>>>> parent of 06c1ae2... register
   </component>
   <component name="ToolWindowManager">
     <frame x="-41" y="23" width="1680" height="939" extended-state="0" />
@@ -431,6 +453,13 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -547,6 +576,7 @@
     </entry>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
@@ -586,10 +616,13 @@
 =======
 =======
 >>>>>>> parent of 06c1ae2... register
+=======
+>>>>>>> parent of 06c1ae2... register
     <entry file="file://$PROJECT_DIR$/src/components/Login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
           <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of 06c1ae2... register
 =======
@@ -610,6 +643,8 @@
         <state relative-caret-position="386">
           <caret line="66" column="142" selection-start-line="66" selection-end-line="67" />
 >>>>>>> parent of 1f4b504... Register
+=======
+>>>>>>> parent of 06c1ae2... register
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -641,9 +676,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Register.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="608">
           <caret line="86" column="16" lean-forward="true" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
 >>>>>>> parent of 1f4b504... Register
+=======
+        <state relative-caret-position="202">
+          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+>>>>>>> parent of 06c1ae2... register
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
