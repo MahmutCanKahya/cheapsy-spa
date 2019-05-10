@@ -96,7 +96,7 @@ class NavBar extends Component {
                 ) : null}
                 {this.state.isAuth ? (
                   <li className="nav-item ">
-                    <a className="nav-link ml-lg-4" id="sat" href="/hemenSat">
+                    <a className="nav-link ml-lg-4" id="sat" href="/sell">
                       HEMEN SAT
                     </a>
                   </li>
