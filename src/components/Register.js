@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../css/loginRegister.css";
 import axios from "axios";
 import alertify from "alertifyjs";
-import Axios from "./Login";
 
 class Register extends Component {
     constructor(props){
