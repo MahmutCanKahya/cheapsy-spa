@@ -15,7 +15,6 @@ class App extends Component {
         <Switch>
           <Route exact path="/add" component={Register} />
           <Route exact path="/login" component={Login} />
-
           <div>
             <NavBar />
 
