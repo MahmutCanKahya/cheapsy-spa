@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import '../css/sell.css';
 import DropToUpload from 'react-drop-to-upload';
 
 
