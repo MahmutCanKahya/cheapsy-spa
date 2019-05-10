@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7db7d8e9-60f7-4b89-82ac-190ed06b3f32" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/components/Sell.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sell.js" afterDir="false" />
 =======
+=======
+>>>>>>> parent of 06c1ae2... register
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register.js" afterDir="false" />
 >>>>>>> parent of 06c1ae2... register
@@ -40,8 +43,13 @@
         <entry file="file://$PROJECT_DIR$/src/components/Profile.js">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="15">
               <caret line="3" selection-start-line="3" selection-end-line="3" />
+=======
+            <state relative-caret-position="395">
+              <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+>>>>>>> parent of 06c1ae2... register
 =======
             <state relative-caret-position="395">
               <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
@@ -264,10 +272,14 @@
       <workItem from="1556895065280" duration="2301000" />
       <workItem from="1557004321471" duration="539000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1557057314371" duration="2427000" />
       <workItem from="1557414563123" duration="194000" />
       <workItem from="1557414792713" duration="3138000" />
       <workItem from="1557433687108" duration="5128000" />
+=======
+      <workItem from="1557057314371" duration="1607000" />
+>>>>>>> parent of 06c1ae2... register
 =======
       <workItem from="1557057314371" duration="1607000" />
 >>>>>>> parent of 06c1ae2... register
@@ -276,7 +288,11 @@
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="23974000" />
+=======
+    <option name="totallyTimeSpent" value="14694000" />
+>>>>>>> parent of 06c1ae2... register
 =======
     <option name="totallyTimeSpent" value="14694000" />
 >>>>>>> parent of 06c1ae2... register
@@ -466,6 +482,7 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
@@ -502,10 +519,15 @@
         <state relative-caret-position="15">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
 =======
+=======
+>>>>>>> parent of 06c1ae2... register
     <entry file="file://$PROJECT_DIR$/src/components/Login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
           <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+<<<<<<< HEAD
+>>>>>>> parent of 06c1ae2... register
+=======
 >>>>>>> parent of 06c1ae2... register
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -516,8 +538,13 @@
     <entry file="file://$PROJECT_DIR$/src/components/NavBar.js">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state relative-caret-position="300">
           <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+=======
+        <state relative-caret-position="202">
+          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+>>>>>>> parent of 06c1ae2... register
 =======
         <state relative-caret-position="202">
           <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
