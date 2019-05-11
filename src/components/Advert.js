@@ -143,10 +143,9 @@ export default class Advert extends Component {
                 <h3 className="card-title">{this.state.ilan_adi}</h3>
                 <h4>{this.state.fiyat+" ₺"}</h4>
                 <p className="card-text">
-                  A{this.state.ilan_aciklama}
+                  {this.state.ilan_aciklama}
                 </p>
-                <span className="text-warning">★ ★ ★ ★ ☆</span>
-                4.0 stars
+                
               </div>
             </div>
             {/* /.card */}
