@@ -1,22 +1,47 @@
 import React, {Component} from 'react';
-import DropToUpload from 'react-drop-to-upload';
 import '../css/sell.css';
+import Axios from 'axios';
+
 
 
 class Sell extends Component {
 constructor(props) {
     super(props);
+    this.state = {
+        isHidden: true,
+        images: null
+    };
+
+    this.inputFileChanged = this.inputFileChanged.bind(this);
+    this.removeUpload = this.removeUpload.bind(this);
+
 }
 
-    handleDrop(files) {
-        console.log("resim droplandı")
-        var data = new FormData();
 
-        files.forEach((file, index) => {
-            data.append('file' + index, file);
-        });
+    inputFileChanged(e){
+        if(window.FileReader){
+            let file = e.target.files[0], reader = new FileReader(), self = this;
+            reader.onload = function(r){
+                self.setState({
+                    images: r.target.result,
+                    isHidden: false
+                });
+            }
+            reader.readAsDataURL(file);
 
+        }
+        else {
+            alert('Soryy, your browser does\'nt support for preview');
+        }
     }
+
+    removeUpload() {
+        this.setState({
+            images: null,
+            isHidden: true
+        });
+}
+
 
 
     render() {
@@ -31,20 +56,21 @@ constructor(props) {
                                 <script className="jsbin"
                                         src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
                                 <div className="file-upload col-md-12">
-                                    <div className="image-upload-wrap">
-                                        <DropToUpload className="file-upload-input" type='file' onDrop={ this.handleDrop } accept="image/*"/>
-                                        <div className="drag-text">
-                                            <h3>Yüklemek İstediğiniz Resmi Sürekleyip Bırakın</h3>
+                                    {this.state.isHidden &&
+                                        <div>
+                                    <input type="file" ref="input_reader" multiple className="file-upload-btn" onChange={this.inputFileChanged} accept="image/jpeg, image/png"/>
+                                    </div>}
+                                    {!this.state.isHidden &&
+                                        <div className="file-upload-content">
+                                            <img className="file-upload-image" src={this.state.images} alt="your image"/>
+                                            <div className="image-title-wrap">
+                                                <button type="button" onClick={this.removeUpload}
+                                                        className="remove-image">Sil Resim Yükle
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="file-upload-content">
-                                        <img className="file-upload-image" src="#" alt="your image"/>
-                                        <div className="image-title-wrap">
-                                            <button type="button" onClick="removeUpload()"
-                                                    className="remove-image">Sil <span className="image-title">Resim Yükle</span>
-                                            </button>
-                                        </div>
-                                    </div>
+                                    }
+
                                 </div>
 
                                 <div className="form-group">
