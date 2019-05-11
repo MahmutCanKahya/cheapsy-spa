@@ -36,7 +36,6 @@ export default class Advert extends Component {
       mahalle: response.data.advert.mahalle,
       sehir: response.data.advert.sehir,
     });
-    console.log("CDM =>", this.state.advert.advert);
   };
 
   render() {
@@ -73,43 +72,13 @@ export default class Advert extends Component {
                 className="carousel slide"
                 data-ride="carousel"
               >
-                <ol className="carousel-indicators">
-                  <li
-                    data-target="#carouselExampleIndicators"
-                    data-slide-to={0}
-                    className="active"
-                  />
-                  <li
-                    data-target="#carouselExampleIndicators"
-                    data-slide-to={1}
-                  />
-                  <li
-                    data-target="#carouselExampleIndicators"
-                    data-slide-to={2}
-                  />
-                </ol>
+
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <img
                       className="d-block w-100 container-fluid"
                       src={"http://sallagitsinakitgelsin.tk:5000/" + this.state.ilan_url}
                       alt="First slide"
-                      style={{ height: "500px" }}
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      className="d-block w-100 container-fluid "
-                      src="http://scottbalmer.co.uk/wp-content/uploads/2018/10/westworld-tv-thumb-324x324.jpg"
-                      alt="Second slide"
-                      style={{ height: "500px" }}
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      className="d-block w-100 container-fluid"
-                      src="http://scottbalmer.co.uk/wp-content/uploads/2018/10/westworld-tv-thumb-324x324.jpg"
-                      alt="Third slide"
                       style={{ height: "500px" }}
                     />
                   </div>
@@ -146,45 +115,6 @@ export default class Advert extends Component {
                   {this.state.ilan_aciklama}
                 </p>
                 
-              </div>
-            </div>
-            {/* /.card */}
-            <div className="card card-outline-secondary my-4">
-              <div className="card-header">Satıcı-Ürün Yorumları</div>
-              <div className="card-body">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Omnis et enim aperiam inventore, similique necessitatibus
-                  neque non! Doloribus, modi sapiente laboriosam aperiam fugiat
-                  laborum. Sequi mollitia, necessitatibus quae sint natus.
-                </p>
-                <small className="text-muted">
-                  Posted by Anonymous on 3/1/17
-                </small>
-                <hr />
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Omnis et enim aperiam inventore, similique necessitatibus
-                  neque non! Doloribus, modi sapiente laboriosam aperiam fugiat
-                  laborum. Sequi mollitia, necessitatibus quae sint natus.
-                </p>
-                <small className="text-muted">
-                  Posted by Anonymous on 3/1/17
-                </small>
-                <hr />
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Omnis et enim aperiam inventore, similique necessitatibus
-                  neque non! Doloribus, modi sapiente laboriosam aperiam fugiat
-                  laborum. Sequi mollitia, necessitatibus quae sint natus.
-                </p>
-                <small className="text-muted">
-                  Posted by Anonymous on 3/1/17
-                </small>
-                <hr />
-                <a href="#" className="btn btn-success">
-                  Yorum Bırak
-                </a>
               </div>
             </div>
           </div>
