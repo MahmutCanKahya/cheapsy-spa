@@ -68,35 +68,33 @@ class NavBar extends Component {
                       GİRİŞ
                     </a>
                   </li>
-                ) : null}
+                ) : <li className="nav-item">
+                <a onClick={this.logOut} className="nav-link" href="/">
+                  ÇIKIŞ
+                </a>
+              </li>}
                 {!this.state.isAuth ? (
                   <li className="nav-item">
                     <a className="nav-link" id="giriskayit" href="/add">
                       KAYIT OL
                     </a>
                   </li>
-                ) : null}
-                {this.state.isAuth ? (
-                  <li className="nav-item">
-                    <a onClick={this.logOut} className="nav-link" href="/">
-                      ÇIKIŞ
-                    </a>
-                  </li>
-                ) : null}
+                ) : <li className="nav-item ">
+                <a className="nav-link" id="profil" href="/profile">
+                  PROFİL
+                </a>
+              </li>}
                 {this.state.isAuth ? (
                   <li className="nav-item ">
-                    <a className="nav-link ml-lg-4" id="sat" href="/hemenSat">
+                    <a className="nav-link ml-lg-4" id="sat" href="/sell">
                       HEMEN SAT
                     </a>
                   </li>
-                ) : null}
-                {!this.state.isAuth ? (
-                  <li className="nav-item ">
-                    <a className="nav-link ml-lg-4" id="sat" href="/login">
-                      HEMEN SAT
-                    </a>
-                  </li>
-                ) : null}
+                ) : <li className="nav-item ">
+                <a className="nav-link ml-lg-4" id="sat" href="/login">
+                  HEMEN SAT
+                </a>
+              </li>}
               </ul>
             </div>
           </div>

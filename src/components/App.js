@@ -7,6 +7,9 @@ import Adverts from "./Adverts";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "../css/App.css";
 import Login from "./Login";
+import Profile from "./Profile";
+import Sell from "./Sell";
+import Category from "./Category";
 
 class App extends Component {
   render() {
@@ -17,22 +20,31 @@ class App extends Component {
           <Route exact path="/login" component={Login} />
           <div>
             <NavBar />
+            <Switch>
+            <Route exact path="/profile/" component={Profile} />
+            <Route exact path="/sell" component={Sell} />
+              <div className="container navtopmargin">
+                <div className="row">
 
-            <div className="container navtopmargin">
-              <div className="row">
-                <LeftBar />
+                <Route  component={LeftBar} />
 
-                <div className="col-lg-9">
-                  <Switch>
-                    <Route exact path="/" component={Adverts} />
-                    <Route exact path="/adverts/:advertId" component={Advert} />
-                    <Route component={Adverts} />
-                  </Switch>
+                  <div className="col-lg-9">
+                    <Switch>
+                      <Route exact path="/" component={Adverts} />
+                      <Route exact path="/kategori/:kategoriAdi" component={Category} />
+                      <Route
+                        exact
+                        path="/adverts/:advertId"
+                        component={Advert}
+                      />
+                      <Route component={Adverts} />
+                    </Switch>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Switch>
 
-            <footer className="footer mt-auto py-3 bg-dark">
+            <footer className="footer py-3 mt-3 bg-dark">
               <div className="container">
                 <p className="m-0 text-center text-white">
                   Copyright &copy; Your Website 2019
