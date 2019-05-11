@@ -12,6 +12,7 @@ class LeftBar extends Component {
                     <a href="/kategori/giyim" className="list-group-item text-white bg-dark">GİYİM</a>
                     <a href="/kategori/kozmetik" className="list-group-item text-white bg-dark">KOZMETİK</a>
                     <a href="/kategori/aksesuar" className="list-group-item text-white bg-dark">AKSESUAR</a>
+                    <a href="/kategori/diger" className="list-group-item text-white bg-dark">DİĞER</a>
 
                 </div>
 

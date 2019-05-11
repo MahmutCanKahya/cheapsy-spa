@@ -10,7 +10,7 @@ class Adverts extends Component {
     };
   }
 
-  componentDidMount = async () => {
+  componentWillMount = async () => {
     const response = await axios.get(
       "http://sallagitsinakitgelsin.tk:5000/api/adverts"
     );

@@ -9,6 +9,7 @@ import "../css/App.css";
 import Login from "./Login";
 import Sell from "./Sell";
 import Profile from "./Profile";
+import Category from "./Category";
 
 class App extends Component {
   render() {
@@ -30,6 +31,7 @@ class App extends Component {
                 <div className="col-lg-9">
                   <Switch>
                     <Route exact path="/" component={Adverts} />
+                    <Route exact path="/kategori/:kategoriAdi" component={Category} />
                     <Route exact path="/adverts/:advertId" component={Advert} />
                     <Route component={Adverts} />
                   </Switch>

@@ -1,0 +1,36 @@
+import React, {Component} from 'react';
+import axios from "axios";
+import AdvertListing from "./advert-listing";
+
+class Category extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            advert: []
+        };
+    }
+
+
+    componentWillMount = async () => {
+        const response = await axios.get(
+            "http://sallagitsinakitgelsin.tk:5000/api/adverts/category/categoryName=:"+this.props.match.params.advertId
+        );
+        this.setState({
+            advert: response.data
+        });
+        console.log("CDM =>", response);
+    };
+
+
+    render() {
+        return (
+                <div className="Adverts">
+                    {console.log(this.state.advert)}
+                    <AdvertListing adverts={this.state.advert} />
+                </div>
+
+        );
+    }
+}
+
+export default Category;
