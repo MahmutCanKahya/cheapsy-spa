@@ -13,7 +13,7 @@ class Category extends Component {
 
     componentWillMount = async () => {
         const response = await axios.get(
-            "http://sallagitsinakitgelsin.tk:5000/api/adverts/category/categoryName=:"+this.props.match.params.advertId
+            "http://sallagitsinakitgelsin.tk:5000/api/adverts/category/categoryName="+this.props.match.params.kategoriAdi
         );
         this.setState({
             advert: response.data
