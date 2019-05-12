@@ -18,7 +18,9 @@ export default class Advert extends Component {
       kullanici_soyad: String,
       kullanici_url: String,
       kullanici_hakkinda: String,
+      token_kullanici:String
     };
+    this.message=this.message.bind(this);
   }
 
   componentDidMount = async () => {
@@ -50,9 +52,42 @@ export default class Advert extends Component {
       adres:response2.data.advert.adres,
       sehir:response2.data.advert.sehir,
     });
-
-
+    this.kullaniciId()
   };
+
+  kullaniciId() {
+    var token = sessionStorage.getItem("user");
+    axios
+      .post("http://sallagitsinakitgelsin.tk:5000/api/user/posts", {
+        authorization: "Bearer " + token
+      })
+      .then(res => {
+        if (res.status === 200) {
+          this.setState({
+            token_kullanici: res.data.authData.userId
+          });
+        } else {
+          const error = new Error(res.error);
+          throw error;
+        }
+      });
+  }
+
+  message(){
+    axios.post('http://sallagitsinakitgelsin.tk:5000/api/messages/conversation',{
+      gonderici:this.state.token_kullanici,
+      alici:this.state.kullanici_id
+    })
+    .then(res => {
+      console.log(res)
+      if (res.status === 201) {
+        console.log("işlem başarılı")
+      } else {
+        const error = new Error(res.error);
+        throw error;
+      }
+    });
+  }
 
   render() {
     return (
@@ -78,7 +113,7 @@ export default class Advert extends Component {
               <li className="list-group-item">{this.state.adres}</li>
             </ul>}
             <div className="card-body">
-              <a href="#" className="card-link">
+              <a  onClick={this.message} href='/profile' className="card-link">
                 Saticiya Mesaj At
               </a>
             </div>
@@ -102,30 +137,6 @@ export default class Advert extends Component {
                     />
                   </div>
                 </div>
-                <a
-                  className="carousel-control-prev"
-                  href="#carouselExampleIndicators"
-                  role="button"
-                  data-slide="prev"
-                >
-                  <span
-                    className="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  />
-                  <span className="sr-only">Previous</span>
-                </a>
-                <a
-                  className="carousel-control-next"
-                  href="#carouselExampleIndicators"
-                  role="button"
-                  data-slide="next"
-                >
-                  <span
-                    className="carousel-control-next-icon"
-                    aria-hidden="true"
-                  />
-                  <span className="sr-only">Next</span>
-                </a>
               </div>
               <div className="card-body">
                 <h3 className="card-title">{this.state.ilan_adi}</h3>

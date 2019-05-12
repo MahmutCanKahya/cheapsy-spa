@@ -1,15 +1,48 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Message extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      kullaniciId: String
+    };
+  }
+  mesajCek() {
+    axios.get("http://localhost:5000/api/messages/kullaniciId="+this.state.kullaniciId)
+    .then(res => {
+        console.log(res);
+      });
+  }
+
+
+
+  kullaniciId() {
+    var token = sessionStorage.getItem("user");
+    axios
+      .post("http://sallagitsinakitgelsin.tk:5000/api/user/posts", {
+        authorization: "Bearer " + token
+      })
+      .then(res => {
+        if (res.status === 200) {
+          this.setState({
+            kullaniciId: res.data.authData.userId
+          });
+          console.log(this.state.kullaniciId)
+        } else {
+          const error = new Error(res.error);
+          throw error;
+        }
+      });
+  }
+
+  componentDidMount(){
+    this.kullaniciId()
+  }
   render() {
+      this.mesajCek()
     return (
       <div className="tab-pane" id="messages">
-        <div className="alert alert-info alert-dismissable">
-          <a className="panel-close close" data-dismiss="alert">
-            ×
-          </a>{" "}
-          This is an <strong>.alert</strong>
-        </div>
         <div className="container">
           <h3 className=" text-center">Gelen Kutusu</h3>
           <div className="messaging">
@@ -19,144 +52,9 @@ export default class Message extends Component {
                   <div className="recent_heading">
                     <h4>Sohbet</h4>
                   </div>
-                  <div className="srch_bar">
-                    <div className="stylish-input-group">
-                      <input
-                        type="text"
-                        className="search-bar"
-                        placeholder="Search"
-                      />
-                      <span className="input-group-addon">
-                        <button type="button">
-                          {" "}
-                          <i className="fa fa-search" aria-hidden="true" />{" "}
-                        </button>
-                      </span>{" "}
-                    </div>
-                  </div>
                 </div>
                 <div className="inbox_chat">
                   <div className="chat_list active_chat">
-                    <div className="chat_people">
-                      <div className="chat_img">
-                        {" "}
-                        <img
-                          src="https://ptetutorials.com/images/user-profile.png"
-                          alt="sunil"
-                        />{" "}
-                      </div>
-                      <div className="chat_ib">
-                        <h5>
-                          Sunil Rajput <span className="chat_date">Dec 25</span>
-                        </h5>
-                        <p>
-                          Test, which is a new approach to have all solutions
-                          astrology under one roof.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="chat_list">
-                    <div className="chat_people">
-                      <div className="chat_img">
-                        {" "}
-                        <img
-                          src="https://ptetutorials.com/images/user-profile.png"
-                          alt="sunil"
-                        />{" "}
-                      </div>
-                      <div className="chat_ib">
-                        <h5>
-                          Sunil Rajput <span className="chat_date">Dec 25</span>
-                        </h5>
-                        <p>
-                          Test, which is a new approach to have all solutions
-                          astrology under one roof.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="chat_list">
-                    <div className="chat_people">
-                      <div className="chat_img">
-                        {" "}
-                        <img
-                          src="https://ptetutorials.com/images/user-profile.png"
-                          alt="sunil"
-                        />{" "}
-                      </div>
-                      <div className="chat_ib">
-                        <h5>
-                          Sunil Rajput <span className="chat_date">Dec 25</span>
-                        </h5>
-                        <p>
-                          Test, which is a new approach to have all solutions
-                          astrology under one roof.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="chat_list">
-                    <div className="chat_people">
-                      <div className="chat_img">
-                        {" "}
-                        <img
-                          src="https://ptetutorials.com/images/user-profile.png"
-                          alt="sunil"
-                        />{" "}
-                      </div>
-                      <div className="chat_ib">
-                        <h5>
-                          Sunil Rajput <span className="chat_date">Dec 25</span>
-                        </h5>
-                        <p>
-                          Test, which is a new approach to have all solutions
-                          astrology under one roof.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="chat_list">
-                    <div className="chat_people">
-                      <div className="chat_img">
-                        {" "}
-                        <img
-                          src="https://ptetutorials.com/images/user-profile.png"
-                          alt="sunil"
-                        />{" "}
-                      </div>
-                      <div className="chat_ib">
-                        <h5>
-                          Sunil Rajput <span className="chat_date">Dec 25</span>
-                        </h5>
-                        <p>
-                          Test, which is a new approach to have all solutions
-                          astrology under one roof.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="chat_list">
-                    <div className="chat_people">
-                      <div className="chat_img">
-                        {" "}
-                        <img
-                          src="https://ptetutorials.com/images/user-profile.png"
-                          alt="sunil"
-                        />{" "}
-                      </div>
-                      <div className="chat_ib">
-                        <h5>
-                          Sunil Rajput <span className="chat_date">Dec 25</span>
-                        </h5>
-                        <p>
-                          Test, which is a new approach to have all solutions
-                          astrology under one roof.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="chat_list">
                     <div className="chat_people">
                       <div className="chat_img">
                         {" "}
@@ -202,58 +100,6 @@ export default class Message extends Component {
                       <p>Test which is a new approach to have all solutions</p>
                       <span className="time_date"> 11:01 AM | June 9</span>{" "}
                     </div>
-                  </div>
-                  <div className="incoming_msg">
-                    <div className="incoming_msg_img">
-                      {" "}
-                      <img
-                        src="https://ptetutorials.com/images/user-profile.png"
-                        alt="sunil"
-                      />{" "}
-                    </div>
-                    <div className="received_msg">
-                      <div className="received_withd_msg">
-                        <p>Test, which is a new approach to have</p>
-                        <span className="time_date"> 11:01 AM | Yesterday</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="outgoing_msg">
-                    <div className="sent_msg">
-                      <p>Apollo University, Delhi, India Test</p>
-                      <span className="time_date"> 11:01 AM | Today</span>{" "}
-                    </div>
-                  </div>
-                  <div className="incoming_msg">
-                    <div className="incoming_msg_img">
-                      {" "}
-                      <img
-                        src="https://ptetutorials.com/images/user-profile.png"
-                        alt="sunil"
-                      />{" "}
-                    </div>
-                    <div className="received_msg">
-                      <div className="received_withd_msg">
-                        <p>
-                          We work directly with our designers and suppliers, and
-                          sell direct to you, which means quality, exclusive
-                          products, at a price anyone can afford.
-                        </p>
-                        <span className="time_date"> 11:01 AM | Today</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="type_msg">
-                  <div className="input_msg_write">
-                    <input
-                      type="text"
-                      className="write_msg"
-                      placeholder="Type a message"
-                    />
-                    <button className="msg_send_btn" type="button">
-                      <i className="fa fa-paper-plane-o" aria-hidden="true" />
-                    </button>
                   </div>
                 </div>
               </div>

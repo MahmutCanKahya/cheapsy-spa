@@ -25,7 +25,7 @@ export default class Profile extends Component {
                 </li>
                 <li className="nav-item">
                   <a
-                    href="#"
+                    href
                     data-target="#messages"
                     data-toggle="tab"
                     className="nav-link"
