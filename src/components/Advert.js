@@ -10,11 +10,14 @@ export default class Advert extends Component {
       ilan_aciklama: String,
       ilan_adi: String,
       ilan_tarihi: String,
-      ilce: String,
       kullanici_id: String,
-      mahalle: String,
+      adres: String,
       sehir: String,
-      ilan_url: String
+      ilan_url: String,
+      kullanici_ad: String,
+      kullanici_soyad: String,
+      kullanici_url: String,
+      kullanici_hakkinda: String,
     };
   }
 
@@ -32,10 +35,23 @@ export default class Advert extends Component {
       ilan_aciklama: response.data.advert.ilan_aciklama,
       ilan_adi: response.data.advert.ilan_adi,
       ilan_tarihi: response.data.advert.ilan_tarihi,
-      ilce: response.data.advert.ilce,
-      mahalle: response.data.advert.mahalle,
-      sehir: response.data.advert.sehir,
     });
+    console.log(response)
+
+    const response2 = await axios.get(
+        "http://sallagitsinakitgelsin.tk:5000/api/user/userId=" + this.state.kullanici_id
+    );
+    this.setState({
+      kullanici_ad:response2.data.advert.ad,
+      kullanici_soyad:response2.data.advert.soyad,
+      kullanici_hakkinda:response2.data.advert.hakkinda,
+      kullanici_mail:response2.data.advert.email,
+      kullanici_url:response2.data.advert.resim,
+      adres:response2.data.advert.adres,
+      sehir:response2.data.advert.sehir,
+    });
+
+
   };
 
   render() {
@@ -43,21 +59,24 @@ export default class Advert extends Component {
       <div className="container">
         <div className="row">
           <div className="card col-lg-3" style={{ height: "50%" }}>
-            <img
-              className="card-img-top"
-              src="http://scottbalmer.co.uk/wp-content/uploads/2018/10/westworld-tv-thumb-324x324.jpg"
-              alt="Card image cap"
-            />
+            {this.state.kullanici_url != null && <img
+                className="card-img-top"
+                src={this.state.kullanici_url}
+            />}
+            {this.state.kullanici_url == null && <img
+                className="card-img-top"
+                src="https://i.ibb.co/gmBNbrD/man.png"
+            />}
             <div className="card-body">
-              <h5 className="card-title">{this.state.kullanici_id}</h5>
+              <h5 className="card-title">{this.state.kullanici_ad +" "+ this.state.kullanici_soyad}</h5>
               <p className="card-text">
-                Aciklama =&gt; Opsiyonel satıcı ile ilgili bilgi içerebilir.
+                {this.state.kullanici_hakkinda}
               </p>
             </div>
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">Sehir/Ulke</li>
-              <li className="list-group-item">Detaylı adress</li>
-            </ul>
+            {this.state.sehir != null && <ul className="list-group list-group-flush">
+              <li className="list-group-item">{this.state.sehir}</li>
+              <li className="list-group-item">{this.state.adres}</li>
+            </ul>}
             <div className="card-body">
               <a href="#" className="card-link">
                 Saticiya Mesaj At
