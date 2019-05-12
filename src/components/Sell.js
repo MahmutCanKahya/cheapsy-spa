@@ -13,8 +13,8 @@ export default class Sell extends Component {
       kategori: "",
       ozellik: "",
       ilanAdi: "",
-      kullanici:"",
-      data:null
+      kullanici: "",
+      data: null
     };
 
     this.sell = this.sell.bind(this);
@@ -32,11 +32,11 @@ export default class Sell extends Component {
           images: r.target.result,
           isHidden: false
         });
-      }
+      };
       this.setState({
-        data: e.target.files[0],
-      })
-      
+        data: e.target.files[0]
+      });
+
       reader.readAsDataURL(file);
     } else {
       alert("Soryy, your browser does'nt support for preview");
@@ -65,20 +65,22 @@ export default class Sell extends Component {
 
   kullaniciId() {
     var token = sessionStorage.getItem("user");
-    axios.post("http://sallagitsinakitgelsin.tk:5000/api/user/posts", {
-      authorization: "Bearer " + token
-    }).then(res => {
-      if (res.status === 200) {
-        this.setState({
-          kullanici:res.data.authData.userId
-        })
-      } else {
-        const error = new Error(res.error);
-        throw error;
-      }
-    });
+    axios
+      .post("http://sallagitsinakitgelsin.tk:5000/api/user/posts", {
+        authorization: "Bearer " + token
+      })
+      .then(res => {
+        if (res.status === 200) {
+          this.setState({
+            kullanici: res.data.authData.userId
+          });
+        } else {
+          const error = new Error(res.error);
+          throw error;
+        }
+      });
   }
-  componentWillMount(){
+  componentWillMount() {
     this.kullaniciId();
   }
 
@@ -95,7 +97,6 @@ export default class Sell extends Component {
       .post("http://sallagitsinakitgelsin.tk:5000/api/adverts", formData)
       .then(res => {
         if (res.status === 201) {
-          
           alertify.success("İlan başarılı bir şekilde oluşturuldu.");
           this.props.history.push("/");
         } else {
@@ -167,7 +168,7 @@ export default class Sell extends Component {
                     this.handleKategori(text);
                   }}
                 >
-                  <option value="emlak">Emlak</option>
+                  <option value="emlak" selected disabled hidden>Emlak</option>
                   <option value="vasıta">Vasıta</option>
                   <option value="elektronik">Elektronik</option>
                   <option value="giyim">Giyim</option>
@@ -206,7 +207,10 @@ export default class Sell extends Component {
                     name="fiyat"
                     className="form-control"
                     placeholder="Fiyat Giriniz"
-                    type="text"
+                    type="number"
+                    min="0.00"
+                    max="10000.00"
+                    step="0.01"
                     onChange={text => {
                       this.handleFiyat(text);
                     }}
