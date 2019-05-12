@@ -270,21 +270,6 @@ export default class Profile extends Component {
                       </div>
                     </div>
                     <div className="form-group row">
-                      <label className="col-lg-3 col-form-label form-control-label">Saat</label>
-                      <div className="col-lg-9">
-                        <select id="user_time_zone" className="form-control" size={0}>
-                          <option value="Hawaii">(GMT-10:00) İstanbul</option>
-                          <option value="Alaska">(GMT-09:00) Berlin</option>
-                          <option value="Pacific Time (US  Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-                          <option value="Arizona">(GMT-07:00) Arizona</option>
-                          <option value="Mountain Time (US  Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                          <option value="Central Time (US Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
-                          <option value="Eastern Time (US  Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-                          <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="form-group row">
                       <label className="col-lg-3 col-form-label form-control-label">Kullancı Adı</label>
                       <div className="col-lg-9">
                         <input className="form-control" type="text" defaultValue="janeuser" />
