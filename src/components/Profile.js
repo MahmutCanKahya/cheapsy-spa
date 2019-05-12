@@ -1,7 +1,99 @@
 import React, { Component } from "react";
 import '../css/shop-item.css'
+import axios from "axios";
 
 export default class Profile extends Component {
+  componentWillMount() {
+      axios.get(
+          "http://sallagitsinakitgelsin.tk:5000/api/user/userId=" + this.props.userId
+      ).then(response2 => {
+        this.setDefaultValues(response2)
+
+      })
+  }
+
+   setDefaultValues(response2) {
+     this.setState({
+       kullanici_ad:response2.data.advert.ad,
+       kullanici_soyad:response2.data.advert.soyad,
+       kullanici_hakkinda:response2.data.advert.hakkinda,
+       kullanici_mail:response2.data.advert.email,
+       kullanici_url:response2.data.advert.resim,
+       adres:response2.data.advert.adres,
+       sehir:response2.data.advert.sehir,
+     });
+  }
+
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      kullanici_id:"",
+      kullanici_ad:"Adınız",
+      kullanici_soyad:"Soyadınız",
+      kullanici_hakkinda:"Hakkınızda",
+      kullanici_url:"",
+      adres:"Adresiniz",
+      sehir:"Sehriniz",
+      data:null
+    };
+
+    this.saveButton = this.saveButton.bind(this);
+    this.inputFileChanged = this.inputFileChanged.bind(this);
+  }
+
+  inputFileChanged(e) {
+    if (window.FileReader) {
+      let file = e.target.files[0],
+          reader = new FileReader(),
+          self = this;
+      reader.onload = function(r) {
+        self.setState({
+          images: r.target.result,
+          isHidden: false
+        });
+      }
+      this.setState({
+        data: e.target.files[0],
+      })
+
+      reader.readAsDataURL(file);
+    } else {
+      alert("Soryy, your browser does'nt support for preview");
+    }
+  }
+
+
+  handleAd(text) {
+    this.setState({ kullanici_ad: text.target.value });
+  }
+  handleSoyad(text) {
+    this.setState({ kullanici_soyad: text.target.value });
+  }
+  handleSehir(text) {
+    this.setState({ sehir: text.target.value });
+  }
+  handleAdres(text) {
+    this.setState({ adres: text.target.value });
+  }
+  handleHakkimda(text) {
+    this.setState({ kullanici_hakkinda: text.target.value});
+  }
+
+  saveButton = () => {
+    console.log(this.state)
+    axios.patch("http://sallagitsinakitgelsin.tk:5000/api/user/userId=" + this.props.userId , {
+      ad:this.state.kullanici_ad,
+      soyad:this.state.kullanici_soyad,
+      hakkida:this.state.kullanici_hakkinda,
+      adres:this.state.adres,
+      sehir:this.state.sehir,
+      resim:this.state.data
+    }).then(res => {
+      console.log(res)
+    })
+  }
+
   render() {
     return (
       <div>
@@ -21,40 +113,13 @@ export default class Profile extends Component {
               </ul>
               <div className="tab-content py-4">
                 <div className="tab-pane active" id="profile">
-                  <h4 className="mb-3">Profilim</h4>
+                  <h4 className="mb-3">{this.state.kullanici_ad +" "+ this.state.kullanici_soyad}</h4>
                   <div className="row">
                     <div className="col-md-6">
                       <h5>Hakkımda</h5>
                       <p>
-                        Fusce quis mi in sapien ultrices ullamcorper at vitae urna. Sed mattis arcu non ullamcorper sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam gravida, scelerisque ex eu, maximus justo. Vivamus sed libero non ex vulputate condimentum at id orci. Quisque luctus mi purus, et ultricies odio vestibulum vitae. Phasellus vestibulum magna id nunc semper, vitae consectetur justo sagittis. Aliquam placerat, eros in laoreet condimentum, mi libero blandit urna, eget consectetur dolor lectus in lorem. Nullam magna turpis, finibus id magna at, sodales consectetur erat. In luctus mollis lectus, id iaculis velit facilisis nec.
+                        {this.state.kullanici_hakkinda}
                       </p>
-                    </div>
-                    <div className="col-md-12">
-                      <h4 className="mt-2"><span className="fa fa-clock-o ion-clock float-right" />Sattıklarım</h4>
-                      <table className="table table-sm table-hover table-striped">
-                        <tbody>                                    
-                          <tr>
-                            <td>
-                              <strong>Teflon tava</strong>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>Kulaklık</strong>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>Teflon tava</strong>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>buraya resim gelcek</strong>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
                     </div>
                   </div>
                   {/*/row*/}
@@ -203,95 +268,56 @@ export default class Profile extends Component {
                         </div>
                       </div>
                     </div></div>
-                  {/*  <table class="table table-hover table-striped">
-                    Önemli!!!!!!! BU DA Alternatif !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                        <tbody>                                    
-                            <tr>
-                                <td>
-                                   <span class="float-right font-weight-bold">3 hrs ago</span> Here is your a link to the latest summary report from the..
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                   <span class="float-right font-weight-bold">Yesterday</span> There has been a request on your account since that was..
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                   <span class="float-right font-weight-bold">9/10</span> Porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                   <span class="float-right font-weight-bold">9/4</span> Vestibulum tincidunt ullamcorper eros eget luctus. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                   <span class="float-right font-weight-bold">9/4</span> Maxamillion ais the fix for tibulum tincidunt ullamcorper eros. 
-                                </td>
-                            </tr>
-                        </tbody> 
-                    </table> */}
+
                 </div>
                 <div className="tab-pane" id="edit">
                   <form role="form">
                     <div className="form-group row">
                       <label className="col-lg-3 col-form-label form-control-label">Ad</label>
                       <div className="col-lg-9">
-                        <input className="form-control" type="text" defaultValue="Jane" />
+                        <input className="form-control" type="text" value={this.state.kullanici_ad} onChange={text => {
+                          this.handleAd(text);
+                        }}/>
                       </div>
                     </div>
                     <div className="form-group row">
                       <label className="col-lg-3 col-form-label form-control-label">Soyad</label>
                       <div className="col-lg-9">
-                        <input className="form-control" type="text" defaultValue="Bishop" />
-                      </div>
-                    </div>
-                    <div className="form-group row">
-                      <label className="col-lg-3 col-form-label form-control-label">Email</label>
-                      <div className="col-lg-9">
-                        <input className="form-control" type="email" defaultValue="email@gmail.com" />
+                        <input className="form-control" type="text" value={this.state.kullanici_soyad} onChange={text => {
+                          this.handleSoyad(text);
+                        }}/>
                       </div>
                     </div>
                     <div className="form-group row">
                       <label className="col-lg-3 col-form-label form-control-label">Adres</label>
                       <div className="col-lg-9">
-                        <input className="form-control" type="text" defaultValue placeholder="Street" />
+                        <input className="form-control" type="text"  value={this.state.sehir} onChange={text => {
+                          this.handleSehir(text);
+                        }}/>
                       </div>
                     </div>
                     <div className="form-group row">
-                      <label className="col-lg-3 col-form-label form-control-label" />
-                      <div className="col-lg-6">
-                        <input className="form-control" type="text" defaultValue placeholder="City" />
-                      </div>
-                      <div className="col-lg-3">
-                        <input className="form-control" type="text" defaultValue placeholder="State" />
-                      </div>
-                    </div>
-                    <div className="form-group row">
-                      <label className="col-lg-3 col-form-label form-control-label">Kullancı Adı</label>
+                      <label className="col-lg-3 col-form-label form-control-label"></label>
                       <div className="col-lg-9">
-                        <input className="form-control" type="text" defaultValue="janeuser" />
+                        <input className="form-control" type="text"  value={this.state.adres} onChange={text => {
+                          this.handleAdres(text);
+                        }}/>
                       </div>
                     </div>
                     <div className="form-group row">
-                      <label className="col-lg-3 col-form-label form-control-label">Şifre</label>
+                      <label className="col-lg-3 col-form-label form-control-label">Hakkimda</label>
                       <div className="col-lg-9">
-                        <input className="form-control" type="password" defaultValue={11111122333} />
+                        <input className="form-control" type="text"  value={this.state.kullanici_hakkinda} onChange={text => {
+                          this.handleHakkimda(text);
+                        }}/>
                       </div>
                     </div>
-                    <div className="form-group row">
-                      <label className="col-lg-3 col-form-label form-control-label">Şifre Doğrula</label>
-                      <div className="col-lg-9">
-                        <input className="form-control" type="password" defaultValue={11111122333} />
-                      </div>
-                    </div>
+
+
                     <div className="form-group row">
                       <label className="col-lg-3 col-form-label form-control-label" />
                       <div className="col-lg-9">
-                        <input type="reset" className="btn btn-secondary" defaultValue="Vazgeç" />
-                        <input type="button" className="btn btn-primary" defaultValue="Kaydet" />
+                        <input type="button" className="btn btn-primary" defaultValue="Kaydet" onClick={this.saveButton.bind(this)}/>
                       </div>
                     </div>
                   </form>
@@ -302,8 +328,16 @@ export default class Profile extends Component {
               <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295398_960_720.png" className="mx-auto img-fluid img-circle d-block" alt="avatar" />
               <h6 className="mt-2">Upload a different photo</h6>
               <label className="custom-file">
-                <input type="file" id="file" className="custom-file-input" />
-                <span className="custom-file-control" style={{borderColor: 'red'}}>Choose file</span>
+                Resim Sec
+                <input
+                    type="file"
+                    id="file"
+                    ref="input_reader"
+                    name="file"
+                    multiple
+                    className="custom-file-input"
+                    onChange={this.inputFileChanged}
+                    accept="image/jpeg, image/png"/>
               </label>
             </div>
           </div>

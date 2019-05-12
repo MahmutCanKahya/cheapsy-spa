@@ -7,7 +7,7 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isAuth: false
+      isAuth: false,
     };
     this.logOut = this.logOut.bind(this);
   }
@@ -18,7 +18,8 @@ class NavBar extends Component {
       authorization: "Bearer " + token
     }).then(res => {
       if (res.status === 200) {
-        this.setState({ isAuth: true });
+        this.setState({
+          isAuth: true });
       } else {
         this.setState({ isAuth: false });
         const error = new Error(res.error);

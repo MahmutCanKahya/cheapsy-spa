@@ -10,8 +10,34 @@ import Login from "./Login";
 import Profile from "./Profile";
 import Sell from "./Sell";
 import Category from "./Category";
+import Axios from 'axios';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userId:""
+    };
+  }
+
+  componentWillMount() {
+    this.isAuthenticated()
+  }
+
+  isAuthenticated() {
+    var token = sessionStorage.getItem("user");
+    Axios.post("http://sallagitsinakitgelsin.tk:5000/api/user/posts", {
+      authorization: "Bearer " + token
+    }).then(res => {
+      if (res.status === 200) {
+        this.setState({userId:res.data.authData.userId});
+      } else {
+        const error = new Error(res.error);
+        throw error;
+      }
+    });
+  }
+
   render() {
     return (
       <Router>
@@ -21,7 +47,7 @@ class App extends Component {
           <div>
             <NavBar />
             <Switch>
-            <Route exact path="/profile/" component={Profile} />
+            <Route exact path="/profile/" component={() => <Profile userId={this.state.userId}/>} />
             <Route exact path="/sell" component={Sell} />
               <div className="container navtopmargin">
                 <div className="row">
