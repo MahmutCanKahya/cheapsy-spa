@@ -21,7 +21,6 @@ export default class Profile extends Component {
        kullanici_url:response2.data.advert.resim,
        adres:response2.data.advert.adres,
        sehir:response2.data.advert.sehir,
-       data:response2.data.advert.resim
      });
   }
 
@@ -87,7 +86,7 @@ export default class Profile extends Component {
     formData.append("hakkinda", this.state.kullanici_hakkinda);
     formData.append("adres", this.state.adres);
     formData.append("sehir", this.state.sehir);
-    formData.append("resim", this.state.data);
+    formData.append("resim", this.state.kullanici_url);
 
     console.log(this.state)
     axios.patch("http://sallagitsinakitgelsin.tk:5000/api/user/userId=" + this.props.userId , formData).then(res => {
