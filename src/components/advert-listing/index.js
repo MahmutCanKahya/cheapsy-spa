@@ -6,7 +6,7 @@ export default function AdvertListing(props) {
     
     <div className="row">
         {
-            props.adverts.map(advert=>
+            props.adverts.slice(props.min,props.max).map(advert=>
                 <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={advert._id}>
                     <ProductListItem advert={advert}/>
                   </div>

@@ -6,8 +6,11 @@ class Adverts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      advert: []
+      advert: [],
+      advertLength: Number,
+      max: 10
     };
+    this.arttir = this.arttir.bind(this);
   }
 
   componentDidMount = async () => {
@@ -15,16 +18,32 @@ class Adverts extends Component {
       "http://sallagitsinakitgelsin.tk:5000/api/adverts"
     );
     this.setState({
-      advert: response.data
+      advert: response.data,
+      advertLength: response.data.length
     });
-    console.log("CDM =>", response);
   };
-
+  arttir() {
+    this.setState({
+      max: this.state.max + 10
+    });
+  }
+  esitMi(){
+    
+  }
   render() {
     return (
       <div className="Adverts">
         {console.log(this.state.advert)}
-        <AdvertListing adverts={this.state.advert} />
+        <AdvertListing
+          adverts={this.state.advert}
+          min={0}
+          max={this.state.max}
+        />
+        {this.state.max<this.state.advertLength?
+          <a onClick={this.arttir}>
+            <h1>+</h1>
+          </a>:null
+        }
       </div>
     );
   }
