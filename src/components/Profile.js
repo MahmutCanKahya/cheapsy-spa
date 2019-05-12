@@ -21,6 +21,7 @@ export default class Profile extends Component {
        kullanici_url:response2.data.advert.resim,
        adres:response2.data.advert.adres,
        sehir:response2.data.advert.sehir,
+       data:response2.data.advert.resim
      });
   }
 
@@ -50,14 +51,13 @@ export default class Profile extends Component {
       reader.onload = function(r) {
         self.setState({
           images: r.target.result,
-          isHidden: false
         });
       }
       this.setState({
         data: e.target.files[0],
       })
 
-      reader.readAsDataURL(file);
+        reader.readAsDataURL(file);
     } else {
       alert("Soryy, your browser does'nt support for preview");
     }
@@ -81,15 +81,16 @@ export default class Profile extends Component {
   }
 
   saveButton = () => {
+    var formData = new FormData();
+    formData.append("ad", this.state.kullanici_ad);
+    formData.append("soyad", this.state.kullanici_soyad);
+    formData.append("hakkinda", this.state.kullanici_hakkinda);
+    formData.append("adres", this.state.adres);
+    formData.append("sehir", this.state.sehir);
+    formData.append("resim", this.state.data);
+
     console.log(this.state)
-    axios.patch("http://sallagitsinakitgelsin.tk:5000/api/user/userId=" + this.props.userId , {
-      ad:this.state.kullanici_ad,
-      soyad:this.state.kullanici_soyad,
-      hakkida:this.state.kullanici_hakkinda,
-      adres:this.state.adres,
-      sehir:this.state.sehir,
-      resim:this.state.data
-    }).then(res => {
+    axios.patch("http://sallagitsinakitgelsin.tk:5000/api/user/userId=" + this.props.userId , formData).then(res => {
       console.log(res)
     })
   }
@@ -325,8 +326,7 @@ export default class Profile extends Component {
               </div>
             </div>
             <div className="col-lg-4 order-lg-1 text-center">
-              <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295398_960_720.png" className="mx-auto img-fluid img-circle d-block" alt="avatar" />
-              <h6 className="mt-2">Upload a different photo</h6>
+              <img src={"http://cheapsy.tk:5000/"+this.state.data} className="mx-auto img-fluid img-circle d-block" alt="avatar" />
               <label className="custom-file">
                 Resim Sec
                 <input
