@@ -69,7 +69,7 @@ class App extends Component {
             <footer className="footer py-3 mt-3 bg-dark">
               <div className="container">
                 <p className="m-0 text-center text-white">
-                  Copyright &copy; Your Website 2019
+                  Copyright &copy; Cheapsy 2019
                 </p>
               </div>
             </footer>

@@ -10,7 +10,7 @@ export default class Sell extends Component {
       isHidden: true,
       images: null,
       fiyat: "",
-      kategori: "",
+      kategori: "emlak",
       ozellik: "",
       ilanAdi: "",
       kullanici: "",
@@ -168,12 +168,12 @@ export default class Sell extends Component {
                     this.handleKategori(text);
                   }}
                 >
-                  <option value="emlak" selected disabled hidden>Emlak</option>
-                  <option value="vasıta">Vasıta</option>
+                  <option value="emlak">Emlak</option>
+                  <option value="vasita">Vasıta</option>
                   <option value="elektronik">Elektronik</option>
                   <option value="giyim">Giyim</option>
                   <option value="aksesuar">Aksesuar</option>
-                  <option value="diğer">Diğer</option>
+                  <option value="diger">Diğer</option>
                 </select>
               </div>
             </div>

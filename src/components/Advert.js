@@ -81,6 +81,7 @@ export default class Advert extends Component {
     .then(res => {
       console.log(res)
       if (res.status === 201) {
+        this.props.history.push('/profile');
         console.log("işlem başarılı")
       } else {
         const error = new Error(res.error);
@@ -90,14 +91,17 @@ export default class Advert extends Component {
   }
 
   render() {
+    console.log(this.state.kullanici_url)
     return (
       <div className="container">
         <div className="row">
-          <div className="card col-lg-3" style={{ height: "50%" }}>
+          <div className="card col-lg-3 " style={{ height: "50%" , paddingTop:"10px"}}>
             {this.state.kullanici_url != null && <img
                 className="card-img-top"
-                src={this.state.kullanici_url}
-            />}
+                src={"http://sallagitsinakitgelsin.tk:5000/"+this.state.kullanici_url}
+            />
+            }
+            
             {this.state.kullanici_url == null && <img
                 className="card-img-top"
                 src="https://i.ibb.co/gmBNbrD/man.png"
@@ -113,14 +117,14 @@ export default class Advert extends Component {
               <li className="list-group-item">{this.state.adres}</li>
             </ul>}
             <div className="card-body">
-              <a  onClick={this.message} href='/profile' className="card-link">
+              <a  onClick={this.message}  className="card-link">
                 Saticiya Mesaj At
               </a>
             </div>
           </div>
 
-          <div className="col-lg-9">
-            <div className="card mt-4">
+          <div className="col-lg-9" >
+            <div className="card mt-4" style={{ paddingTop:"10px"}}>
               <div
                 id="carouselExampleIndicators"
                 className="carousel slide"
