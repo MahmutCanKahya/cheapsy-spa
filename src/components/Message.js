@@ -15,11 +15,10 @@ export default class Message extends Component {
       mesaj: [],
       mesaj_zaman: [],
       gonderici: [],
-      gonderilecek_mesaj:String,
-      tiklanan:String
+      gonderilecek_mesaj: String,
+      tiklanan: String
     };
     moment.locale("tr");
-
   }
 
   mesajCek() {
@@ -34,10 +33,10 @@ export default class Message extends Component {
         });
         let sira;
         this.state.konusmalar.forEach(element => {
-          if(element.konusmacilar[1]===this.state.kullaniciId){
-            sira=0
-          }else{
-            sira=1
+          if (element.konusmacilar[1] === this.state.kullaniciId) {
+            sira = 0;
+          } else {
+            sira = 1;
           }
           axios
             .get(
@@ -60,19 +59,22 @@ export default class Message extends Component {
     });
   }
 
-  mesajGonder= e => {
-    axios.post("http://localhost:5000/api/messages/",{
-        gonderici:this.state.kullaniciId,
+  mesajGonder = e => {
+    axios
+      .post("http://localhost:5000/api/messages/", {
+        gonderici: this.state.kullaniciId,
         mesaj: this.state.gonderilecek_mesaj,
-        konusmaId:this.state.tiklanan
-    }).then(res=>{
-    this.setState({
-      mesaj: [...this.state.mesaj, this.state.gonderilecek_mesaj],
-      gonderici: [...this.state.gonderici, this.state.kullaniciId],
-      mesaj_zaman:[...this.state.gonderici,moment()]
-    })
-    });
-  }
+        konusmaId: this.state.tiklanan
+      })
+      .then(res => {
+        this.setState({
+          mesaj: [...this.state.mesaj, this.state.gonderilecek_mesaj],
+          gonderici: [...this.state.gonderici, this.state.kullaniciId],
+          mesaj_zaman: [...this.state.mesaj_zaman, moment()._d]
+        });
+        console.log(this.state.mesaj_zaman)
+      });
+  };
 
   kullaniciId() {
     var token = sessionStorage.getItem("user");
@@ -101,11 +103,11 @@ export default class Message extends Component {
   konusmaTikla = e => {
     const tiklanan = e.currentTarget.getAttribute("value");
     this.setState({
-      tiklanan:tiklanan,
-      gonderici:[],
-      mesaj:[],
-      mesaj_zaman:[]
-    })
+      tiklanan: tiklanan,
+      gonderici: [],
+      mesaj: [],
+      mesaj_zaman: []
+    });
     axios
       .get("http://localhost:5000/api/messages/konusmaId=" + tiklanan)
       .then(res => {
@@ -184,7 +186,7 @@ export default class Message extends Component {
                             </div>
                           </div>
                         </div>
-                      )
+                      );
                     } else {
                       return (
                         <div className="outgoing_msg">
@@ -212,8 +214,15 @@ export default class Message extends Component {
                       className="write_msg"
                       placeholder="Mesaj yazin..."
                     />
-                    <button className="msg_send_btn" value=""type="button" onClick={this.mesajGonder}>
-                      <i className="fa fa-paper-plane-o" aria-hidden="true" >></i>
+                    <button
+                      className="msg_send_btn"
+                      value=""
+                      type="button"
+                      onClick={this.mesajGonder}
+                    >
+                      <i className="fa fa-paper-plane-o" aria-hidden="true">
+                        >
+                      </i>
                     </button>
                   </div>
                 </div>
